@@ -1,3 +1,5 @@
+# Donate (any evm) - 0xDEADf12DE9A24b47Da0a43E1bA70B8972F5296F2  
+
 # settings.json  
 **api_key** - api_key аккаунта KuCoin (_выдается после создания API_)  
 **api_secret** - api_secret аккаунта KuCoin (_выдается после создания API_)  
