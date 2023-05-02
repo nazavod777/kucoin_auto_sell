@@ -13,6 +13,7 @@ if __name__ == '__main__':
     API_SECRET: str = settings_json['api_secret']
     API_PASS_PHRASE: str = settings_json['api_pass_phrase']
     START_SALE_TIME: int = int(str(settings_json['start_sale_time'])[:10])
+    SALE_PRICE: float= float(settings_json['sale_price'])
     THREADS: int = int(settings_json['threads'])
     REQUESTS_COUNT: int = int(settings_json['requests_count'])
     ENDPOINT_URL: str = settings_json['endpoint_url']
@@ -31,6 +32,7 @@ if __name__ == '__main__':
               token_from=token_from,
               token_to=token_to,
               start_sale_time=START_SALE_TIME,
+              sale_price=SALE_PRICE,
               threads=THREADS,
               requests_count=REQUESTS_COUNT,
               endpoint_url=ENDPOINT_URL,
