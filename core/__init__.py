@@ -1,0 +1,1 @@
+from core.kucoin_auto_sell import auto_sell
