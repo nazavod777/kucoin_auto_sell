@@ -22,6 +22,7 @@ class AutoSell:
                  token_from: str,
                  token_to: str,
                  start_sale_time: int,
+                 sale_price: float,
                  threads: int,
                  requests_count: int,
                  endpoint_url: str,
@@ -32,6 +33,7 @@ class AutoSell:
         self.token_from: str = token_from
         self.token_to: str = token_to
         self.start_sale_time: int = start_sale_time
+        self.sale_price: float = sale_price
         self.threads: int = threads
         self.requests_count: int = requests_count
         self.endpoint_url: str = endpoint_url
@@ -134,9 +136,10 @@ class AutoSell:
                                                                    request_data={
                                                                        'side': 'sell',
                                                                        'symbol': f'{self.token_from.upper()}-{self.token_to.upper()}',
-                                                                       'type': 'market',
+                                                                       'type': 'limit',
                                                                        'size': f'{token_from_balance:.9f}',
-                                                                       'clientOid': str(uuid4())
+                                                                       'clientOid': str(uuid4()),
+                                                                       'price': str(self.sale_price)
                                                                    })
 
         logger.success(f'Order Id: {response_text["data"]["orderId"]}')
@@ -178,6 +181,7 @@ def auto_sell(api_key: str,
               token_from: str,
               token_to: str,
               start_sale_time: int,
+              sale_price: float,
               threads: int,
               requests_count: int,
               endpoint_url: str,
@@ -188,6 +192,7 @@ def auto_sell(api_key: str,
                          token_from=token_from,
                          token_to=token_to,
                          start_sale_time=start_sale_time,
+                         sale_price=sale_price,
                          threads=threads,
                          requests_count=requests_count,
                          endpoint_url=endpoint_url,
