@@ -4,6 +4,8 @@ from core import auto_sell
 from utils import logger
 
 if __name__ == '__main__':
+    print('Donate (any evm) - 0xDEADf12DE9A24b47Da0a43E1bA70B8972F5296F2\n')
+
     with open('settings.json', 'r', encoding='utf-8-sig') as file:
         settings_json: dict = load(file)
 
