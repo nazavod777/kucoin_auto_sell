@@ -3,6 +3,7 @@
   "api_secret": "",
   "api_pass_phrase": "",
   "start_sale_time": 1683064968,
+  "sale_price": 1,
   "threads": 1,
   "requests_count": 5,
   "endpoint_url": "https://api.kucoin.com",
