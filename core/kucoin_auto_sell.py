@@ -119,6 +119,9 @@ class AutoSell:
                             token_from_balance=token_from_balance))
             for _ in range(self.requests_count)
         ]
+
+        await self.wait_start_sale_time(session=session)
+
         await asyncio.gather(*tasks)
 
     async def send_sell_request(self,
@@ -164,8 +167,6 @@ class AutoSell:
                 return
 
             logger.info(f'{self.token_from.upper()} - {token_from_balance:.9f}')
-
-            await self.wait_start_sale_time(session=session)
 
             await self.run_tasks(session=session,
                                  token_from_balance=token_from_balance)
